@@ -1,6 +1,7 @@
 "use client";
 
 import { Dispatch, SetStateAction } from "react";
+import { BooleanInput } from "../Input/BooleanInput";
 import { Tuple } from "./Tuple";
 import { TupleArray } from "./TupleArray";
 import { AbiParameter } from "abitype";
@@ -38,6 +39,8 @@ export const ContractInput = ({ setForm, form, stateObjectKey, paramType }: Cont
     switch (paramType.type) {
       case "address":
         return <AddressInput {...inputProps} />;
+      case "bool":
+        return <BooleanInput {...inputProps} />;
       case "bytes32":
         return <Bytes32Input {...inputProps} />;
       case "bytes":
